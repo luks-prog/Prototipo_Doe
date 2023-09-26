@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@use 'conf';
+
+.header {
+	border-bottom: .4em solid conf.$header-upper-border-color;
+	box-shadow: 0 .8em conf.$header-lower-border-color;
+	padding: 0 1em;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	&__title {
+		color: conf.$header-title-font-color;
+		
+		font-family: modern;
+		font-size: 2.8em; /* 2.8 * 10px = 28px */
+		text-transform: uppercase;
+	
+		@media(min-width: 1024px) {
+			font-size: 3.6em; /* 3.6 * 10px = 36px */
+		}
+	}	
+}

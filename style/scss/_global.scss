@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: modern;
+	src: url(../../fonts/modern.otf) format("opentype");
+}
+
+html {
+	font-family: "Helvetica", sans-serif;
+	font-size: 62.5%; // 16px * 62.5 / 100 = 10px	
+}
+
+%margin-padding-reset {
+	margin: 0;
+	padding: 0;
+}

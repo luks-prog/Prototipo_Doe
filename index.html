@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="style/css/styles.css">	
+	<title>Diário Oficial - MPCE</title>
+</head>
+<body class="page">
+
+	<div class="warning warning_visible">
+		<spam class="warning__message">
+			<strong>desenvolvimento</strong>			
+		</spam>
+	</div>
+
+	<div class="page__inner">
+	
+		<header class="header">
+			<div class="header__inner">			
+				<h1 class="header__title">Diário Oficial</h1>
+				
+				<div class="logo">
+					<div class="logo__inner">
+						<img class="logo__image" src="images/logo_mpce.jpg"
+							alt="Logotipo do Ministério Público do Estado do Ceará.">
+						<div class="logo__caption">
+							<p class="logo__caption-abbreviation">
+								MP<span class="logo__caption-abbreviation-end">CE</span>
+							</p>
+							<p class="logo__caption-full">Ministério Público do Estado do Ceará</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</header>
+		
+		<div class="page__content">		
+			<main>				
+			
+				<section class="section">		
+					<h2 class="section__subtitle  section__subtitle_theme_download">Download</h2>
+				
+					<form class="form  download-filter">						
+						<div class="form__field  form__field_valid_not">
+							<label class="form__field-label" for="publication-date">Data de publicação</label>
+							<input class="form__field-input" id="publication-date" type="date" required>
+							<p class="form__field-message">Informe a "data de publicação".</p>
+						</div>
+						<div class="form__field form__field_valid_not">
+							<label class="form__field-label" for="edition">Edição</label>
+							<select class="form__field-input" id="edition" required>
+								<option value="">Selecione</option>
+								<option value="100">100</option>
+								<option value="101">101</option>
+								<option value="102">102</option>								
+							</select>
+							<p class="form__field-message">Informe a "edição".</p>
+						</div>
+						<button class="form__button  download-filter__button  form__button_theme_download"
+							type="submit">Baixar</button>									
+					</form>
+					
+				</section>
+				
+				<section class="section">
+					<h2 class="section__subtitle  section__subtitle_theme_search">Pesquisa</h2>
+					 
+					<div class="search">										
+						<form class="form  search__filter">											
+							<div class="form__field  search__filter-act-number  form__field_valid_not">
+								<label class="form__field-label" for="act-number">Número do ato</label>
+								<input class="form__field-input" id="act-number" type="text">
+								<p class="form__field-message">Informe o "número do ato".</p>
+							</div>
+							<div class="form__field  search__filter-keyword  form__field_valid_not">
+								<label class="form__field-label" for="keyword">Palavra-chave</label>
+								<input class="form__field-input" id="keyword" type="text">
+								<p class="form__field-message">Informe uma "palavra-chave".</p>
+							</div>
+							<div class="form__field  search__filter-initial-date  form__field_valid_not">
+								<label class="form__field-label" for="initial-date">Data inicial</label>
+								<input class="form__field-input" id="initial-date" type="date" required>
+								<p class="form__field-message">Informe a "data inicial da pesquisa".</p>
+							</div>
+							<div class="form__field  search__filter-final-date  form__field_valid_not">
+								<label class="form__field-label" for="final-date">Data final</label>
+								<input class="form__field-input" id="final-date" type="date" required>
+								<p class="form__field-message">Informe a "data final da pesquisa".</p>
+							</div>
+							<div class="search__filter-buttons">
+								<button class="form__button  search__filter-button  form__button_theme_search"
+									type="submit">Pesquisar</button>
+								<button class="form__button  search__filter-button  form__button_theme_clean"
+									type="submit">Limpar</button>				
+							</div>							
+						</form>											
+						<div class="search__result">
+							<table class="table">
+								<thead>
+									<tr class="table__header-row">
+										<th class="table__header-cell">#</th>
+										<th class="table__header-cell">Edição</th>
+										<th class="table__header-cell">Publicação</th>
+										<th class="table__header-cell table__header-cell_hidden">
+											Resumo
+										</th>
+										<th class="table__header-cell">Baixar</th>
+									</tr>
+								</thead>
+								<tbody class="table__body">
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">1</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem.Lorem ipsum dolor sit amet, consectetur
+											adipiscing elit. Fusce ut sapien et ex laoreet consequat sit amet eget sem.
+											
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">2</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem. Lorem ipsum dolor sit amet, consectetur 
+											adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">3</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem. Lorem ipsum dolor.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">4</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">5</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">6</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem. Lorem ipsum dolor sit amet, consectetur
+											adipiscing elit. Fusce ut sapien et.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">7</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem. Lorem ipsum dolor sit amet, consectet.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">8</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">9</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="table__body-cell  table__body-cell-order">10</td>
+										<td class="table__body-cell  search__result-edition">112</td>
+										<td class="table__body-cell  search__result-publication-date">10/11/2020</td>
+										<td class="table__body-cell  search__result-text  table__body-cell_hidden">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sapien et
+											ex laoreet consequat sit amet eget sem. Lorem ipsum dolor sit amet, consectetur
+											ex laoreet consequat sit amet eget sem.
+										</td>
+										<td class="table__body-cell  search__result-download">
+											<a href="#"	class="icon-link  icon-link_download-pdf">Download</a>
+										</td>
+									</tr>				
+								</tbody>
+							</table>							
+							<div class="search__result-pagination-bar">
+								
+								<div class="pagination-bar">	
+									<span class="pagination-bar__info">1-10 de 20</span>
+									<a class="pagination-bar__button  pagination-bar__button_previous"
+										href="#">
+										<span class="pagination-bar__button-text
+											pagination-bar__button-text_hidden">Página anterior</span>
+									</a>
+									<a class="pagination-bar__button  pagination-bar__button_next"
+										href="#">
+										<span class="pagination-bar__button-text
+											pagination-bar__button-text_hidden">Próxima página</span>
+									</a>
+								</div>					
+										
+							</div>															
+						</div>
+					</div>
+					
+				</section>	
+						
+			</main>	
+		</div>
+		
+		<footer class="footer">
+			<div class="footer__inner">		
+				<p class="footer__author-abbr">
+					<abbr title="Ministério Público do Estado do Ceará">MPCE</abbr> -
+					<abbr title="Secretaria de Tecnologia da Informação">SETIN</abbr>
+					&copy; 2021
+				</p>		
+				<div class="footer__build-stamp">
+					<p class="footer__build-stamp-version">v1.0.1<p>
+					<p class="footer__build-stamp-date">26/03/2021 22:30<p>
+				</div>
+			</div>		
+		</footer>
+			
+	</div>
+
+</body>
+</html>

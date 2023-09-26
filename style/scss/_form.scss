@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@use 'conf';
+
+.form {
+	display: grid;
+	row-gap: 1em;
+	
+	font-family: "Helvetica", sans-serif;
+	font-size: 1.8em; /* 1.8 * 10px = 18px */
+	
+	@media(min-width: 640px) {
+		column-gap: .8em;
+	
+		font-size: 2em; /* 2 * 10px = 20px */
+	}
+	
+	&__field {
+		display: flex;
+		flex-direction: column; 
+	}
+	
+	&__field-label {
+		margin: 0;
+		padding: 0 0 .4em 0;
+		
+		color: conf.$label-font-color;
+		font-size: 1em;
+	}
+	
+	&__field-input {
+		-moz-appearance: none; /* Evita que, em dispositivos móveis, seja aplicado o estilo do SO para os elementos. */
+		-ms-appearance: none;
+		-o-appearance: none;
+		-webkit-appearance: none;   	
+		appearance: none;	               
+		
+		box-sizing: border-box;
+		justify-self: stretch;
+		width: auto;
+		
+		border-width: 2px;
+		margin: 0;
+		padding: 0 .5em;			
+		
+		background-color: conf.$input-background-color;
+		color: conf.$input-font-color;
+		
+		font-size: 1em;
+		line-height: 2em;
+	}
+		
+	&__field-message {
+		visibility: hidden;
+		
+		margin: 0;
+		padding: .4em 0;
+		
+		font-size: .85em;
+		font-weight: bold;
+	}
+
+	&__field_valid_not {
+		
+		.form__field-input {
+			border-color: conf.$valid-not-input-border-color;
+			box-shadow: 0 0 .125em .15em conf.$valid-not-input-border-color;
+		} 
+		
+		.form__field-message {
+			visibility: visible;
+		
+			color: conf.$valid-not-message-font-color;
+		}
+		
+	}
+	
+	&__button {
+		margin: 0;
+		border: 1px solid conf.$button-background-color;
+		padding: 0 1em;
+			
+		background-color: conf.$button-background-color;
+		background-repeat: no-repeat;
+		background-position: .8em 50%;
+		background-size: 1.25em 1.25em;
+		color: conf.$button-font-color;
+		cursor: pointer;
+		outline: none;
+		
+		height: 2.5em;
+		
+		font-weight: 500;
+		text-indent: 1.75em;
+		
+		&:active {
+			background-color: lighten(conf.$button-background-color, 8%);	
+		}
+		
+		&_theme_download {
+			background-image: url(conf.$button-icon-download);
+		}
+		
+		&_theme_search {
+			background-image: url(conf.$button-icon-search);
+		}
+		
+		&_theme_clean {
+			background-image: url(conf.$button-icon-clean);
+		}			
+	}
+}

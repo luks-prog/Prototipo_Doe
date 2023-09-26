@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@use 'conf';
+@use 'global';
+
+.footer {
+	box-shadow: 0 -.4em conf.$footer-border-color;
+	padding: 1em;
+	background-color: conf.$footer-background-color;
+	color: conf.$footer-font-color;
+	
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	&__author-abbr {
+		@extend	%margin-padding-reset;
+		
+		font-family: "Helvetica", sans-serif;
+		font-size: 1.5em; /* 1.5 * 10px = 15px */
+		font-weight: bold;	
+	
+		abbr {
+			text-decoration: none;
+		}
+	}
+	
+	&__build-stamp {
+		font-family: "Helvetica", sans-serif;
+		font-size: 1.25em; /* 1.25 * 10px = 12.5px */
+		font-weight: bold;
+		text-align: right;
+		
+		p {
+			@extend	%margin-padding-reset;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@use 'conf';
+@use 'corner-ribbon' as cr;
+
+@include cr.config(
+	$background-color: conf.$dev-warn-bg-color,
+  	$background-opacity: conf.$dev-warn-opacity,
+  	$border-color: conf.$dev-warn-border-color,
+	$corner: conf.$dev-warn-corner-position,
+  	$font-color: conf.$dev-warn-font-color,
+  	$font-family: conf.$dev-warn-font-family, 
+  	$font-size: conf.$dev-warn-font-size,
+	$font-style: conf.$dev-warn-font-style,
+	$font-weight: conf.$dev-warn-font-weight,
+	$positioning: conf.$dev-warn-position,		 
+  	$text-transform: conf.$dev-warn-text-transform,
+  	$width: conf.$dev-warn-width,
+	$z-index: 100	
+);
+
+.warning {
+	margin: 0;
+	padding: 0;
+	
+	@include cr.box;
+	
+	&_visible {
+		display: block;
+	}
+	
+	&__message {
+		margin: 0;
+		padding: 0;
+		
+		@include cr.ribbon;
+	}
+}

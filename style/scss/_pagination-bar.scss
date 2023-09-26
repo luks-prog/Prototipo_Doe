@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@use 'conf';
+
+.pagination-bar {
+	display: flex;
+	align-items: center;
+	
+	color: conf.$pagination-bar-font-color;
+	
+	font-size: 1.125em;
+	
+	&__info {
+		margin: 0 .5em;	
+		
+		order: 2;
+	
+		@media(min-width: 640px) {
+			order: 1;
+		}	
+	}
+		
+	&__button {
+		display: block;
+		width: 1.5em;	
+			
+		background-color: conf.$pagination-button-background-color;
+		border-radius: 50%;
+		margin: 0 .25em;
+		
+		color: conf.$pagination-button-font-color;
+		font-size: 1.5em;
+		font-weight: bold;
+		line-height: 1.5em;
+		text-align: center;
+		text-decoration: none;	
+	
+		&:after {
+			display: block;	
+		}
+	}
+	
+	&__button_previous {
+		order: 1;
+	
+		@media(min-width: 640px) {
+			order: 2;
+		}	
+		
+		&:after {
+			content: '<';
+		}
+	}
+	
+	&__button_next {
+		order: 3;
+	
+		&:after {
+			content: '>';	
+		}
+	}
+	
+	&__button-text_hidden {
+		display: none;	
+	}
+}

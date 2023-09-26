@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+@use 'conf';
+
+.logo {
+	@media(min-width: 1024px) {
+		font-size: 2em; /* 2 * 10px = 20px */	
+	}
+	
+	&__inner {
+		@media(min-width: 1024px) {
+			display: flex;	
+			align-items: center;	
+		}
+	}
+	
+	&__image {
+		height: 70px;
+	
+		@media(min-width: 1024px) {
+			height: 80px;
+			order: 1;
+		}		
+	}
+	
+	&__caption {
+		display: none;
+	
+		@media(min-width: 1024px) {
+			display: block;
+					
+			font-weight: bold;
+			text-align: center;				
+		}
+	}
+	
+	&__caption-abbreviation {
+		flex-grow: 1;
+		
+		margin: 0;
+		
+		color: conf.$logo-initials-primary-font-color;
+		
+		font-size: 1.85em; /* 1.85 * 2 * 10px = 37px */
+	}
+	
+	&__caption-abbreviation-end {
+		color: conf.$logo-initials-secondary-font-color;
+	}
+	
+	&__caption-full {	
+		@media(min-width: 1024px) {	
+			margin: -.5em 0 0 0;
+			width: 100%;
+			width: 18ch;
+		
+			color: conf.$logo-caption-font-color;	
+		
+			font-size: .6em; /* .6 * 2 * 10px = 12px */	
+		}
+	}		
+}

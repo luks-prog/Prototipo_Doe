@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+
+$z-index: 1000;
+$-positioning: absolute;
+$-corner: (y: top, x: left);
+
+$-border-thickness: .25rem;
+$-border-color: #000;
+$-v-padding: .8rem;
+
+$-background-color: #C00D0D; 
+$-background-opacity: 1; 
+
+$-font-color: #FFF;
+$-font-family: Helvetica sans-serif;
+$-font-size: 1.6rem;
+$-font-family: Helvetica sans-serif;
+$-font-size: 1.4rem;
+$-font-style: normal;
+$-font-weight: bold;
+$-text-transform: uppercase;
+ 
+$-width: 28rem;
+$-height-: $-font-size + $-v-padding * 2 + $-border-thickness * 2;
+
+$-params: ();
+
+@mixin config(
+	$background-color: null, 
+	$background-opacity: null, 
+	$border-color: null,
+	$corner: null,
+	$font-color: null,
+	$font-family: null,
+	$font-size: null,
+	$font-style: null,
+	$font-weight: null,
+	$positioning: null,
+	$text-transform: null,
+	$width: null,
+	$z-index: null
+) {
+	
+	@if $background-color {
+		$-background-color: $background-color !global;
+	}
+	
+	@if $background-opacity {
+		$-background-opacity: $background-opacity !global;
+	}
+	
+	@if $border-color {
+		$-border-color: $border-color !global;
+	}
+	
+	@if $corner {
+		$-corner: $corner !global;
+	}
+	
+	@if $font-color {
+		$-font-color: $font-color !global;
+	}
+	
+	@if $font-family {
+		$-font-family: $font-family !global;
+	}
+	
+	@if $font-size {
+		$-font-size: $font-size !global;
+		$-height: $-font-size + $-v-padding * 2 + $-border-thickness * 2 !global;
+	}
+	
+	@if $font-style {
+		$-font-style: $font-style !global;
+	}
+	
+	@if $font-weight {
+		$-font-weight: $font-weight !global;
+	}	
+	
+	@if $positioning {
+		$-positioning: $positioning !global;
+	}
+	
+	@if $text-transform {
+		$-text-transform: $text-transform !global;
+	}
+	
+	@if $width {
+		$-width: $width !global;
+	}
+	
+	@if $z-index {
+		$z-index: $z-index !global;
+	}
+	
+	$-params: -set-position($-corner) !global;
+			
+}
+
+@function -set-position($corner) {	
+	
+	$config: ();
+	
+	@if (map.get($corner, "v-position") == top) {
+		$config: map.set($config, "y-position", top);
+		$config: map.set($config, "y-origin", top);		
+	} @else if (map.get($corner, "v-position") == bottom) {
+		$config: map.set($config, "y-position", bottom);
+		$config: map.set($config, "y-origin", bottom);
+	} @else {
+		@warn "\"#{map.get($corner, "v-position")}\" " +
+		      "is not a valid value for " +
+		 	  "corner ribbon vertical position.\a" +
+			  "Vertical position value was set as \"top\".";
+		$config: map.set($config, "y-position", top);
+		$config: map.set($config, "y-origin", top);
+	}
+	
+	@if (map.get($corner, "h-position") == left) {
+		$config: map.set($config, "x-position", left);
+		$config: map.set($config, "x-origin", right);
+	} @else if (map.get($corner, "h-position") == right) {
+		$config: map.set($config, "x-position", right);
+		$config: map.set($config, "x-origin", left);
+	} @else {
+		@warn "\"#{map.get($corner, "h-position")}\" " +
+		      "is not a valid value for " +
+		 	  "corner ribbon horizontal position.\a" +
+			  "Horizontal position value was set as \"left\".";
+		$config: map.set($config, "x-position", left);
+		$config: map.set($config, "x-origin", right);
+	}
+	
+	$y-origin: map.get($config, "y-origin");
+	$x-origin: map.get($config, "x-origin");
+	
+	@if ($y-origin == top and $x-origin == right) {
+			$config: map.set($config, "rotation", -1);
+			$config: map.set($config, "y-translation", -1);
+			$config: map.set($config, "x-translation", -1);	
+	} @else if ($y-origin == top and $x-origin == left) {
+			$config: map.set($config, "rotation", 1);
+			$config: map.set($config, "y-translation", -1);
+			$config: map.set($config, "x-translation", 1);
+	} @else if ($y-origin == bottom and $x-origin == right) {
+			$config: map.set($config, "rotation", 1);
+			$config: map.set($config, "y-translation", 1);
+			$config: map.set($config, "x-translation", -1);
+	} @else if ($y-origin == bottom and $x-origin == left) {
+			$config: map.set($config, "rotation", -1);
+			$config: map.set($config, "y-translation", 1);
+			$config: map.set($config, "x-translation", 1);	
+	}
+	
+	@return $config;
+	
+}
+
+@mixin box {	
+	position: $-positioning;
+	#{map.get($-params, "y-position")}: 0;
+	#{map.get($-params, "x-position")}: 0;
+	z-index: $z-index;
+	
+	$box-width: $-width * math.sin(45deg);
+	height: $box-width; 
+	width: $box-width;
+	
+	overflow: hidden;	
+}
+
+@mixin ribbon () {
+	box-sizing: border-box;
+	display: inline-block;
+	position: absolute;
+	#{map.get($-params, "y-position")}: 0;
+	#{map.get($-params, "x-position")}: 0;	
+			
+	border: $-border-thickness solid $-border-color;
+	padding: $-v-padding 0;
+	width: $-width;
+	
+	background-color: $-background-color;
+	color: $-font-color;
+	opacity: $-background-opacity;
+	
+ 	font-size: $-font-size;
+	font-style: $-font-style;
+	font-weight: $-font-weight;
+	line-height: 1;
+	text-align: center;
+	text-transform: $-text-transform;
+	
+	$height: $-height;
+	$y: math.ceil($height * math.sin(45deg));
+	$x: math.ceil($-width - (math.sin(45deg) * ($-width - $height)));
+	
+	transform-origin: map.get($-params, "y-origin") 
+					  map.get($-params, "x-origin");
+	transform: 
+		translate(#{map.get($-params, "x-translation") * $x}, 
+			  	  #{map.get($-params, "y-translation") * $y})
+ 		rotate(#{map.get($-params, "rotation") * 45deg});
+ 		
+	font-family: $-font-family;
+}

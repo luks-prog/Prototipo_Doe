@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+@use 'conf'; 
+
+.table {
+	border-spacing: .25em;
+	
+	font-family: "Helvetica", sans-serif;
+	font-size: 1em; /* 1 * 10px = 10px */
+
+	&__header-row {
+		background-color: conf.$table-header-background-color;	
+		color: conf.$table-header-font-color;	
+	}
+	
+	&__header-cell {
+		padding: .25em .5em;
+		
+		font-weight: bold;
+		font-size: 1.75em; /* 1.75 * 10px = 17.5px */	
+	
+		@media(min-width: 640px) {
+			font-size: 2em; /* 2 * 10px = 20px */
+		}
+	}
+	
+	&__header-cell_hidden {
+		display: none;	
+	
+		@media(min-width: 640px) {
+			display: table-cell;
+		}
+	}
+	
+	&__body {		
+		tr {
+			&:nth-child(even) {
+				background-color: conf.$table-even-cell-background-color;
+			}			
+			&:nth-child(odd) {
+				background-color: conf.$table-odd-cell-background-color;
+			}			
+		}		
+	}
+	
+	&__body-cell {
+		padding: .75em .5em;
+		
+		font-size: 1.5em; /* 1.5 * 10px = 15px */
+	
+		@media(min-width: 640px) {
+			font-size: 1.75em; /* 1.75 * 10px = 17.5px */
+		}
+	}
+	
+	&__body-cell-order {
+		text-align: center;
+	}
+	
+	&__body-cell_hidden {
+		display: none;	
+	
+		@media(min-width: 640px) {
+			display: table-cell;
+		}
+	}
+}

@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+//Cores ***********************************************************************************************
+//Tema (paleta de cores).
+$primary-color: #00713c;
+$secondary-color: #c00d0d;
+$tertiary-color: #5B3256;
+$quaternary-color: #777;
+$primary-background-color: white;
+$secondary-background-color: black;
+$tertiary-background-color: #ddd;
+$primary-font-color: black;
+$secondary-font-color: white;
+$tertiary-font-color: $secondary-color;
+
+//Cor de fundo da aplicação.
+$app-background-color: $primary-background-color;
+
+//Cabeçalho.
+$header-title-font-color: $primary-color;
+$header-upper-border-color: $secondary-color;
+$header-lower-border-color: $primary-color;
+
+//Logo.
+$logo-initials-primary-font-color: $primary-color;
+$logo-initials-secondary-font-color: $secondary-color;
+$logo-caption-font-color: $primary-color;
+
+//Seção.
+$section-title-font-color: $primary-font-color;
+$section-bottom-border-color: $quaternary-color;
+
+//Formulário.
+$button-background-color: $primary-color;
+$button-font-color: $secondary-font-color;
+$input-font-color: $primary-font-color;
+$input-background-color: $primary-background-color;
+$label-font-color: $primary-font-color;
+$valid-not-input-border-color: $secondary-color;
+$valid-not-message-font-color: $tertiary-font-color;
+
+//Tabela.
+$table-header-background-color: $tertiary-color;
+$table-header-font-color: $secondary-font-color;
+$table-even-cell-background-color: $tertiary-background-color;
+$table-odd-cell-background-color: $primary-background-color; 
+
+//Barra de paginação.
+$pagination-bar-font-color: $primary-font-color;
+$pagination-button-background-color: $tertiary-color;
+$pagination-button-font-color: $secondary-font-color;
+
+//Rodapé.
+$footer-background-color: $primary-color;
+$footer-border-color: $secondary-color;
+$footer-font-color: $secondary-font-color;
+//*****************************************************************************************************
+
+//Imagens. ********************************************************************************************
+$images-path: "../../images/";
+$section-title-icon-download: $images-path + "download_file.png"; 
+$section-title-icon-search: $images-path + "search_file.png";
+$button-icon-download: $images-path + "download.png";
+$button-icon-search: $images-path + "search.png";
+$button-icon-clean: $images-path + "broom.png";
+$link-icon-pdf: $images-path + "pdf_file.png";
+//*****************************************************************************************************
+
+//Largura máxima da área de conteúdo das páginas.
+$content-max-width: 1366px;
+
+//Aviso de versão de desenvolvimento como fita de canto. **********************************************
+$dev-warn-bg-color: $secondary-color;
+$dev-warn-border-color: black;
+$dev-warn-corner-position: ("v-position": top, "h-position": right);
+$dev-warn-font-color: $secondary-font-color;
+$dev-warn-font-family: Helvetica, sans-serif;
+$dev-warn-font-size: 1.8rem;
+$dev-warn-font-style: normal;
+$dev-warn-font-weight: bold;
+$dev-warn-opacity: .85;
+$dev-warn-position: absolute;
+$dev-warn-text-transform: uppercase;
+$dev-warn-width: 28rem;
+//*****************************************************************************************************

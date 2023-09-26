@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@use 'conf';
+
+.page {
+	box-sizing: border-box;
+	
+	background-color: conf.$app-background-color;
+	
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;	
+		position: relative;	//Referência para o posicionamento de items aninhados. 	
+	}
+	
+	&__content {
+		flex: 1;
+		
+		@media(min-width: conf.$content-max-width) {
+			margin: 0 auto;
+			/* 	Evita a barra de rolagem horizontal quando a resolução
+				horizontal do dispositivo é de 1366px. 	*/
+			width: calc(#{conf.$content-max-width} - (100vw - 100%)); 
+		}	
+	}	
+}
